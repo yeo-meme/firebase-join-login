@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.firebaselogin"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+
+    //firebase 애널리틱스
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+    //firebase 인증 모듈
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+
+
+    //안드로이드에 파이이베이스 코어 모듈 의존
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+
+    //firebase 베이스 실시간 db
+    implementation 'com.google.firebase:firebase-database:19.1.0'
+
+}
